@@ -46,7 +46,7 @@ class BoardGameServiceTest {
                 .description("")
                 .duration(15)
                 .status(GameStatus.AVAILABLE)
-                .quantity(10)
+                .stockQuantity(10)
                 .build();
     }
 
@@ -60,7 +60,7 @@ class BoardGameServiceTest {
                 .description("")
                 .duration(15)
                 .status(GameStatus.AVAILABLE)
-                .quantity(10)
+                .stockQuantity(10)
                 .build();
 
         Mockito.when(repository.save(Mockito.any())).thenReturn(catan);
@@ -82,7 +82,7 @@ class BoardGameServiceTest {
                 .description("cool game")
                 .duration(15)
                 .status(GameStatus.AVAILABLE)
-                .quantity(10)
+                .stockQuantity(10)
                 .build();
         Mockito.when(repository.findById(Mockito.any())).thenReturn(Optional.of(COUP));
 
@@ -105,7 +105,7 @@ class BoardGameServiceTest {
                 .description("")
                 .duration(15)
                 .status(GameStatus.UNAVAILABLE)
-                .quantity(10)
+                .stockQuantity(10)
                 .build();
 
         Mockito.when(repository.findById(Mockito.any())).thenReturn(Optional.of(COUP));
@@ -154,7 +154,7 @@ class BoardGameServiceTest {
                 .description("")
                 .duration(15)
                 .status(GameStatus.UNAVAILABLE)
-                .quantity(10)
+                .stockQuantity(10)
                 .build();
 
         BoardGame stratego = BoardGame.builder()
@@ -164,7 +164,7 @@ class BoardGameServiceTest {
                 .description("")
                 .duration(15)
                 .status(GameStatus.UNAVAILABLE)
-                .quantity(15)
+                .stockQuantity(15)
                 .build();
 
         Page<BoardGame> boardGamePage = new PageImpl<>(List.of(COUP, stratego, chess));
@@ -197,7 +197,7 @@ class BoardGameServiceTest {
                 .description("")
                 .duration(15)
                 .status(GameStatus.UNAVAILABLE)
-                .quantity(15)
+                .stockQuantity(15)
                 .build();
 
         Assertions.assertThrowsExactly(IllegalArgumentException.class,

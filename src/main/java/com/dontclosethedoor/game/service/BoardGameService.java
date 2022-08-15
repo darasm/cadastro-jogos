@@ -26,7 +26,7 @@ public class BoardGameService {
         boardGame.setCategory(boardGameChanged.getCategory());
         boardGame.setDescription(boardGameChanged.getDescription());
         boardGame.setDuration(boardGameChanged.getDuration());
-        boardGame.setQuantity(boardGameChanged.getQuantity());
+        boardGame.setStockQuantity(boardGameChanged.getStockQuantity());
 
         return repository.save(boardGame);
     }
